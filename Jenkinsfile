@@ -6,17 +6,6 @@ node {
 
         checkout scm
     }
-    stage('Maven Install') {
-        /* Install Maven */
-        agent {
-          docker {
-            image 'maven:3.5.0'
-          }
-        }
-        steps {
-          sh 'mvn clean install'
-        }
-    }
 
     stage('Build image') {
         /* This builds the actual image; synonymous to
