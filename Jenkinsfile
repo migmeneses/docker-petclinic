@@ -6,6 +6,17 @@ node {
 
         checkout scm
     }
+    stage('Maven Install') {
+        /* Install Maven */
+        agent {
+          docker {
+            image 'maven:3.5.0'
+          }
+        }
+        steps {
+          sh 'mvn clean install'
+        }
+    }
 
     stage('Build image') {
         /* This builds the actual image; synonymous to
@@ -32,7 +43,7 @@ node {
             app.push("latest")
         }
     
-    stage('Run Cont') {
+    stage('Run container') {
     /* Now we can run the container locally and see how it does */
     sh 'docker run -d migmeneses/ubuntu-petclinic'
         }
