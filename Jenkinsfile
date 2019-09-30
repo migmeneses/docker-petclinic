@@ -34,7 +34,7 @@ node {
     
     stage('Run container') {
     /* Now we can run the container locally and see how it does */
-    sh 'docker run -d migmeneses/ubuntu-petclinic'
+    sh 'docker run -d -P migmeneses/ubuntu-petclinic'
         }
     }
 }
