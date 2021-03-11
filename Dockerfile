@@ -1,5 +1,5 @@
 # Pull Ubuntu Bionic
-FROM ubuntu:20.04
+FROM ubuntu:18.04
 
 # Create working directory
 RUN mkdir -p /var/node/
